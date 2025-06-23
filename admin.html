@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recipe Finder App - Admin Manage Users</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+    crossorigin="anonymous"
+  />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #ff7e5f;
+      color: white;
+      height: 100vh;
+      padding: 20px;
+      position: fixed;
+    }
+    .sidebar h2 {
+      margin-top: 0;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar li {
+      margin: 15px 0;
+    }
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+    .main-content {
+      margin-left: 250px;
+      padding: 2rem;
+      flex-grow: 1;
+      background-color: #f9f9f9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* This centers children like the form and table */
+    }
+    form#user-form input,
+    form#user-form button {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      font-size: 16px;
+    }
+    table {
+      width: 100%;
+      max-width: 800px;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    button.edit, button.delete {
+      margin-right: 5px;
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    button.edit {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 3px;
+    }
+    button.delete {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Ganti bagian sidebar ini -->
+<nav class="sidebar" role="navigation">
+  <h2><i class="fas fa-utensils"></i> RecipeFinder</h2>
+  <ul>
+    <li>
+      <button id="logout-btn" style="
+        background-color: white;
+        color: #ff7e5f;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+      ">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    </li>
+  </ul>
+</nav>
+
+
+  <main class="main-content">
+    <h1>Manage Users</h1>
+
+    <form id="user-form">
+      <input type="hidden" id="user-id" />
+      <input type="text" id="user-name" placeholder="Name" required />
+      <input type="text" id="user-roles" placeholder="Roles (e.g. admin, user)" required />
+      <input type="password" id="user-password" placeholder="Password" required />
+      <button type="submit">Save</button>
+    </form>
+
+    <table id="users-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Password</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Users will be displayed here -->
+      </tbody>
+    </table>
+  </main>
+<!-- Keep your current form and table HTML as-is -->
+
+<script src="admin.js"></script> <!-- Load your updated JS with fetch -->
+<script>
+  document.getElementById("logout-btn").addEventListener("click", function () {
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "index.html";
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recipe Finder App</title>
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+
+    :root {
+      --primary: #ff7e5f;
+      --primary-dark: #eb5e41;
+      --primary-light: #ffb199;
+      --secondary: #0ba360;
+      --text-dark: #333333;
+      --text-light: #f8f9fa;
+      --background: #ffffff;
+      --background-light: #f8f9fa;
+      --border-radius: 0.5rem; /* 8px */
+      --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .bg-primary { background-color: var(--primary); }
+    .bg-primary-dark { background-color: var(--primary-dark); }
+    .bg-primary-light { background-color: var(--primary-light); }
+    .text-primary { color: var(--primary); }
+    .text-primary-dark { color: var(--primary-dark); }
+    .text-secondary { color: var(--secondary); }
+    .bg-background { background-color: var(--background); }
+    .bg-background-light { background-color: var(--background-light); }
+    .border-primary { border-color: var(--primary); }
+    .rounded-custom { border-radius: var(--border-radius); }
+    .shadow-custom { box-shadow: var(--shadow); }
+    .shadow-custom-hover:hover {
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="bg-white shadow-md rounded-md max-w-4xl mx-auto p-4 mb-8 sticky top-4 z-50">
+    <div class="container mx-auto flex justify-between items-center max-w-4xl">
+      <a href="#" class="text-primary text-2xl font-bold flex items-center gap-2">
+        <i class="fas fa-utensils"></i> Recipe Finder
+      </a>
+      <ul class="hidden sm:flex gap-6 text-gray-700 font-semibold">
+        <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
+        <li><a href="about.html" class="hover:text-primary transition">About</a></li>
+      </ul>
+      <button
+        id="menu-btn"
+        class="sm:hidden text-primary text-2xl focus:outline-none"
+        aria-label="Toggle menu"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+    <div class="container max-w-4xl mx-auto p-8">
+        <h1 class="text-3xl font-bold text-primary mb-4">About Recipe Finder</h1>
+        <p class="text-gray-700 mb-4">
+        Ini adalah aplikasi web sederhana yang memakai api dari TheMealDB.
+        </p>
+        <h2 class="text-2xl font-semibold text-primary mb-2">Features</h2>
+        <ul class="list-disc list-inside mb-4">
+        <li>mencari resep.</li>
+        <li>melihat video resep.</li>
+        <li><a href="https://www.themealdb.com/" class="text-primary hover:underline">TheMealDB</a> adalah API yang menyediakan informasi tentang resep makanan dan minuman.</li>
+        <li><a href="https://github.com/Irfansyah001/SearchRecipe_PDW_team-project" class="text-primary hover:underline">Team SearchRecipe_PDW_team-project</a> Berisi Team Project original dari Praktikum Pemrograman Web.</li>
+        </ul>
+        <h2 class="text-2xl font-semibold text-primary mb-2">Mulai</h2>
+        <p class="text-gray-700 mb-4">
+        Untuk mulai menggunakan Recipe Finder, cukup klik tombol "Mulai" di bawah ini dan jelajahi dunia kuliner yang lezat!
+        </p>
+        <a href="index.html" class="bg-primary text-white px-4 py-2 rounded">Mulai</a>
+      </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
