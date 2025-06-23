@@ -7,6 +7,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const loggedInUserRaw = localStorage.getItem("loggedInUser");
 
+  const authLink = document.getElementById("user-auth-link");
+  
+    if (authLink) {
+    if (loggedInUserRaw) {
+      const user = JSON.parse(loggedInUserRaw);
+      authLink.innerHTML = `<i class="fas fa-sign-out-alt"></i> Logout (${user.name})`;
+      authLink.href = "#";
+      authLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.removeItem("loggedInUser");
+        alert("You have been logged out.");
+        window.location.reload();
+      });
+    } else {
+      authLink.innerHTML = `<i class="fas fa-user"></i> Login`;
+      authLink.href = "login.html";
+    }
+  }
+
   // ===== 1. Check login status =====
   if (!loggedInUserRaw) {
     showLoginPrompt();
